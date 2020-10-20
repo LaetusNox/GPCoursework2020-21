@@ -15,5 +15,9 @@ Learning Journal
    
 18/10/20
     
-    After doublechecking my code, I realised I didn't use ``[ExecuteInEditMode]`` so when I went to test it, it wouldn't work. Once I edited the Progress Bar script, it worked         perfectly. Despite this, there are still issues regarding the stretching of the sprite that causes distortion. From here I will ask someone to test out my tutorial to see if
-    they have this issue.
+   After doublechecking my code, I realised I didn't use ``[ExecuteInEditMode]`` so when I went to test it, it wouldn't work. Once I edited the Progress Bar script, it worked        perfectly. Despite this, there are still issues regarding the stretching of the sprite that causes distortion. From here I will ask someone to test out my tutorial to see if
+   they have this issue.
+
+20/10/20
+ 
+  Currently having my tutorial 1 tested, starting info gathering for next tutorial
