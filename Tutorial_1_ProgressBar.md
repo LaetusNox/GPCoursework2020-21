@@ -15,7 +15,7 @@ Step 4:
   
 Step 5:
  In the Inspector under the Rect Transform, click the Anchor Select. Hold Alt down, go down to the 'Stretch' section and select the option ``Fill to Parent``. Set the
- image type to 'Filled' in the
+ image type to 'Filled' in the image component.
  
 Step 6:
 
@@ -34,6 +34,8 @@ Step 8:
     using System.Collections.Generic;
     using UnityEngine;
     using UnityEngine.UI;
+    
+    [ExecuteinEditMode] //To ensure the script works prior to loading the game up in Play Mode
 
     public class ProgressBar : MonoBehaviour
     {
