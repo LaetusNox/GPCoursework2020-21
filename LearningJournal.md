@@ -41,3 +41,16 @@ Learning Journal
 
   Figured out my script for my player control movement, currently typing up my 3rd tutorial and will migrate my 2nd tutorial into github shortly.
  
+3/11/20
+
+  Started and completed my 4th tutorial: an inventory UI system. Will begin combining the 4 scripts I have next week, starting with the Rayhit button prompt and the player movement. Will begin typing up my 4th tutorial soon as I only have it on paper.
+  
+10/11/20
+
+  Connected my rayhit and player movement scripts as wanted, however I had a bug where the ray wouldn't rotate with the player. Visually the debug ray rotated but in terms of code it wouldn't activate the button prompt unless the player model was at a specific angle. Fixed this by changing Vector3.Forward to Transform.Forward. Will need to go back to my old tutorial and change this so users don't have this issue.
+  
+17/11/20
+
+  Tried to connect the ray button prompt and the progress bar using a counter, however I had some minor issues referencing to another script. Realised the issue was that I wasn't setting the int variable 'CollectTotal' in the Rayhit script as a static variable. As a result it wasn't referencing properly. Now done and the script is working.
+  
+24/11/20
