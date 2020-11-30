@@ -54,3 +54,8 @@ Learning Journal
   Tried to connect the ray button prompt and the progress bar using a counter, however I had some minor issues referencing to another script. Realised the issue was that I wasn't setting the int variable 'CollectTotal' in the Rayhit script as a static variable. As a result it wasn't referencing properly. Now done and the script is working.
   
 24/11/20
+
+
+30/11/20
+
+Had some issues with my progress bar regarding visuals being distorted, which I originally blamed on myself using bad images. That being said, I changed my tutorial to fix it to play it safe.
