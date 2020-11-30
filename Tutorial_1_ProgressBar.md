@@ -1,69 +1,73 @@
 Step 1:
- Open a new unity project
+ 
+Open a new unity project
   
 Step 2: 
- Right click the ``Heirarchy tab``, go down to ``UI`` and select ``Canvas``
+ 
+Right click the ``Heirarchy tab``, go down to ``UI`` and select ``Canvas``
   
 Step 3:
- Right click the Heirarchy tab again and under the UI section, select ``Image``, which will automatically set itself as a child of the Canvas. From here shape the rectangle as
- you like, however, this tutorial is for a linear progress bar so it is best to keep it in a rectangular form. This will be the ``Parent component`` of the progress bar so rename
- it as you like, from here on in I will refer to it as ``Parent Bar``.
+
+Right click the ``Heirarchy tab`` and select ``empty GameObject`` and make it a child of the **Canvas**. Rename it to whatever you like but from henceforth, it will be referred to as ``Progress Bar`` 
  
 Step 4:
- Right click the **Parent Bar** in the Heirarchy Tab and create a new ``UI>Image`` (henceforeward reffered to as ``Mask``) and set both UI>Images to whatever bar 
- sprite you would like.
+
+Right click the **Progress Bar** in the Heirarchy Tab and create a new ``UI>Image``, henceforth known as ``Frame``. In the image component of the **Frame** Game Object, select an empty bar graphic of your choice. This will be the frame of the progress bar.
   
 Step 5:
- In the Inspector under the Rect Transform, click the Anchor Select. Hold Alt down, go down to the 'Stretch' section and select the option ``Fill to Parent``. Set the
- image type to 'Filled' in the image component.
- 
+
+Right click the Heirarchy and select ``UI>Image`` again, and make it a child of the **Progress Bar**. This new image gameObject will be referred to as ``Fill``. From here, reshape the **Progress Bar** Parent GameObject to the general size you want. 
+
 Step 6:
 
- Duplicate the child (henceforeward referred to as ``Fill``) and make it a child of **Mask**. In the Image component, set the image type back to ``Sliced``. Ensure that the Anchor
- Preset is still set to **Fill to Parent**.
+In the Inspector under the Rect Transform for the two children GameObjects (**Frame** and **Fill**), click the ``Anchor Select``. Hold Alt down, go down to the 'Stretch' section and select the option ``Fill to Parent``.
 
 Step 7:
 
- Select **Mask** from the Heirarchy and changed the fill method to Horizontal, add a ``Mask Component`` and turn off the ``Show Mask Graphic``
+Select the **Progress Bar** Parent GameObject and add a ``Slider`` component. Ensure the ``Interactable`` setting is unticked. Set ``Transition`` and ``Navigation`` to None. 
  
 Step 8:
+
+For ``Fill Rect``: Drag in the **Fill** gameObject previously made and set your direction of fill. Set your Maximum and minimum value as necessary.
  
- Under the original **Parent Bar** GameObject reate a Script named ``Progress Bar`` and copy in the following code:
+Step 9: 
+
+Under the original **Progress Bar** GameObject, create a Script named ``Progress Bar`` and copy in the following code:
  
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-    using UnityEngine.UI;
-    
-    [ExecuteinEditMode] //To ensure the script works prior to loading the game up in Play Mode
+     using System.Collections;
+     using System.Collections.Generic;
+     using UnityEngine;
+     using UnityEngine.UI;
 
-    public class ProgressBar : MonoBehaviour
-    {
-        public int maximum;
-        public int current;
-        public Image Mask;
+     [ExecuteInEditMode] //So you can test the progressBar without having to set the engine to Play
+     public class progressbar : MonoBehaviour
+     { 
+         public int current;
+         public Slider fill;
 
-        // Start is called before the first frame update
-        void Start()
-        {
 
-        }
+         // Start is called before the first frame update
+         void Start()
+         {
 
-        // Update is called once per frame
-        void Update()
-        {
-            GetCurrentFill();
-        }
+         }
 
-        void GetCurrentFill()
+         // Update is called once per frame
+         void Update()
+         {
+             GetCurrentFill();
+             current = //Here reference the script and int that your slider is monitoring as: script.intname
+         }
 
-            {
-                float fillAmount = (float)current / (float)maximum;
-                Mask.fillAmount = fillAmount;
-            }
+         void GetCurrentFill()
 
-    }
+         {
+             float fillAmount = (float)current;
+             fill.value = fillAmount;
+         }
+
+     }
 
 Step 9:
 
- Save your script, set your **Mask** GameObject as the public 'Mask' in the script component. Input your maximum and current values for the progress bar and you are done. 
+ Save your script, set the Fill reference in the script as the **Progress Bar** gameObject  
